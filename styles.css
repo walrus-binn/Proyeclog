@@ -1,7 +1,22 @@
 
-/* =========================================
-   1. CONFIGURACIÓN GENERAL
-========================================= */
+/* =====================================
+   🌸 LOGIN CUTE - PINK AESTHETIC
+   ===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --pink: #ec91b8;
+    --pink-dark: #d96d9e;
+    --pink-light: #ffe5f0;
+    --pink-soft: #fff2f7;
+    --purple: #c7a5df;
+    --text: #765467;
+    --white: #ffffff;
+    --error: #d95379;
+}
+
+/* Configuración general */
 
 * {
     margin: 0;
@@ -9,65 +24,227 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #A94F78;
-    --secondary: #C7799B;
-    --pink: #E9A9C4;
-    --pink-dark: #D783A8;
-    --pink-light: #FCEEF4;
-    --lavender: #E8DDF5;
-    --white: #FFFFFF;
-    --background: #FFF7FA;
-    --text: #624454;
-    --gray: #A58B99;
-    --error: #D94F6B;
-    --success: #39896B;
-}
-
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 15% 20%, #ffffff 0 3%, transparent 3.5%),
+        radial-gradient(circle at 85% 75%, #ffffff 0 4%, transparent 4.5%),
+        linear-gradient(135deg, #ffe8f1, #f9d8ed, #eee1ff);
+
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-
-    background: linear-gradient(
-        135deg,
-        #FCEAF2,
-        #F7EFFF,
-        #FFF4F7
-    );
-
-    color: var(--text);
+    padding: 25px;
 }
 
+/* Decoración de fondo */
 
-/* =========================================
-   2. CONTENEDOR PRINCIPAL
-========================================= */
+body::before {
+    content: "♡";
+    position: fixed;
+    top: 8%;
+    left: 10%;
+    font-size: 65px;
+    color: #ffffff80;
+    pointer-events: none;
+}
+
+body::after {
+    content: "✿";
+    position: fixed;
+    bottom: 7%;
+    right: 10%;
+    font-size: 85px;
+    color: #ffffff90;
+    pointer-events: none;
+}
+
+/* Tarjeta principal */
 
 .login-container {
     width: 100%;
-    max-width: 1050px;
-    min-height: 620px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    background: var(--white);
-    border-radius: 25px;
+    max-width: 440px;
+    background: rgba(255, 255, 255, 0.94);
+    padding: 42px 38px;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 15px 45px #d88aaf35;
+    position: relative;
     overflow: hidden;
-
-    box-shadow: 0 20px 60px rgba(169, 79, 120, 0.15);
-
-    animation: appear 0.7s ease;
+    animation: aparecer 0.7s ease;
 }
 
+/* Línea decorativa superior */
 
-/* Animación de entrada */
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(
+        90deg,
+        #f5a9c9,
+        #d7b2ec,
+        #f5a9c9
+    );
+}
 
-@keyframes appear {
+/* Sección del formulario */
+
+.form-section {
+    width: 100%;
+}
+
+h1, h2 {
+    color: #c96e9c;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+p {
+    text-align: center;
+    color: #a8879b;
+    line-height: 1.6;
+}
+
+/* Etiquetas */
+
+label {
+    display: block;
+    color: #986b85;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Campos de entrada */
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #f4d5e4;
+    border-radius: 15px;
+    background: #fff8fb;
+    color: #765467;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #e99cbd;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px #f9dce9;
+}
+
+input::placeholder {
+    color: #c7a9b9;
+}
+
+/* Espaciado de los campos */
+
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+
+/* Botón mostrar contraseña */
+
+.toggle-password {
+    color: #d477a3;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #a94e7a;
+}
+
+/* Recordar correo */
+
+input[type="checkbox"] {
+    accent-color: #df82ad;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+/* Enlaces */
+
+a {
+    color: #d477a3;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #a94e7a;
+    text-decoration: underline;
+}
+
+/* Botón principal */
+
+button[type="submit"],
+.login-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 22px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f1a5c6, #df82ad);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 7px 17px #df82ad45;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover,
+.login-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #e98bb5, #d96d9e);
+    box-shadow: 0 10px 22px #df82ad65;
+}
+
+button[type="submit"]:active,
+.login-button:active {
+    transform: scale(0.98);
+}
+
+/* Mensajes de error */
+
+.error,
+.error-message,
+.field-error {
+    color: var(--error);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Mensajes de éxito */
+
+.success,
+.success-message {
+    color: #68a88c;
+    background: #effaf3;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* Animación */
+
+@keyframes aparecer {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -79,997 +256,32 @@ body {
     }
 }
 
+/* Adaptación a celulares */
 
-/* =========================================
-   3. SECCIÓN DE BIENVENIDA
-========================================= */
-
-.welcome-section {
-    background: linear-gradient(
-        145deg,
-        #B65F85,
-        #D58BAA,
-        #E7AFC5
-    );
-
-    color: var(--white);
-    padding: 45px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    position: relative;
-    overflow: hidden;
-}
-
-
-/* Círculos decorativos */
-
-.welcome-section::before {
-    content: "";
-    position: absolute;
-
-    width: 320px;
-    height: 320px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.12);
-
-    right: -130px;
-    bottom: -100px;
-}
-
-.welcome-section::after {
-    content: "";
-    position: absolute;
-
-    width: 200px;
-    height: 200px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.09);
-
-    top: 90px;
-    left: -110px;
-}
-
-
-/* Marca */
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    position: relative;
-    z-index: 1;
-}
-
-.brand-icon {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #F8D6E4;
-
-    border-radius: 13px;
-
-    font-size: 25px;
-    color: #A94F78;
-}
-
-.brand h2 {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-
-/* Contenido de bienvenida */
-
-.welcome-content {
-    position: relative;
-    z-index: 1;
-    margin-top: 35px;
-}
-
-.security-icon {
-    width: 75px;
-    height: 75px;
-
-    border-radius: 22px;
-
-    background: rgba(255, 255, 255, 0.2);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-bottom: 28px;
-}
-
-.security-icon svg {
-    width: 43px;
-    height: 43px;
-    color: white;
-}
-
-.welcome-content h1 {
-    font-size: 32px;
-    margin-bottom: 16px;
-    line-height: 1.3;
-}
-
-.welcome-content > p {
-    font-size: 15px;
-    color: #FFF3F8;
-    line-height: 1.8;
-    max-width: 350px;
-}
-
-
-/* Lista de características */
-
-.features {
-    margin-top: 35px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    font-size: 14px;
-    color: #FFF5F9;
-}
-
-.feature span {
-    width: 23px;
-    height: 23px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.2);
-
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
-}
-
-
-/* Pie de página */
-
-.footer-text {
-    position: relative;
-    z-index: 1;
-
-    font-size: 11px;
-    color: #FCE5EE;
-}
-
-
-/* =========================================
-   4. SECCIÓN DEL FORMULARIO
-========================================= */
-
-.form-section {
-    padding: 65px 55px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background: #FFFFFF;
-}
-
-.form-header {
-    margin-bottom: 35px;
-}
-
-.subtitle {
-    color: var(--pink-dark);
-
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.form-header h2 {
-    font-size: 32px;
-    color: var(--primary);
-
-    margin-top: 12px;
-    margin-bottom: 10px;
-}
-
-.form-header p {
-    color: var(--gray);
-
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-
-/* =========================================
-   5. CAMPOS DEL FORMULARIO
-========================================= */
-
-.form-group {
-    margin-bottom: 23px;
-}
-
-.form-group label {
-    display: block;
-
-    margin-bottom: 9px;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    color: var(--primary);
-}
-
-.input-wrapper {
-    width: 100%;
-    height: 52px;
-
-    display: flex;
-    align-items: center;
-
-    border: 1px solid #EBD5E0;
-    border-radius: 12px;
-
-    background: #FFFAFC;
-
-    transition: all 0.3s ease;
-}
-
-.input-wrapper:focus-within {
-    border-color: var(--pink-dark);
-
-    box-shadow: 0 0 0 4px rgba(231, 169, 196, 0.2);
-
-    background: white;
-}
-
-.input-icon {
-    display: flex;
-    align-items: center;
-
-    padding-left: 15px;
-
-    color: #C58AA5;
-}
-
-.input-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-.input-wrapper input {
-    width: 100%;
-    height: 100%;
-
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    padding: 0 12px;
-
-    font-size: 13px;
-    color: var(--text);
-
-    min-width: 0;
-}
-
-.input-wrapper input::placeholder {
-    color: #C4AAB7;
-}
-
-
-/* Botón mostrar contraseña */
-
-.toggle-password {
-    border: none;
-    background: transparent;
-
-    padding: 10px;
-    margin-right: 7px;
-
-    cursor: pointer;
-
-    color: #B98AA1;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 7px;
-}
-
-.toggle-password:hover {
-    color: var(--primary);
-    background: var(--pink-light);
-}
-
-.toggle-password svg {
-    width: 20px;
-    height: 20px;
-}
-
-
-/* =========================================
-   6. MENSAJES DE ERROR
-========================================= */
-
-.error-message {
-    display: block;
-
-    min-height: 17px;
-    margin-top: 5px;
-
-    font-size: 11px;
-    color: var(--error);
-}
-
-.input-wrapper.invalid {
-    border-color: var(--error);
-    background: #FFF7F8;
-}
-
-.input-wrapper.valid {
-    border-color: var(--success);
-}
-
-
-/* =========================================
-   7. OPCIONES DEL FORMULARIO
-========================================= */
-
-.form-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    flex-wrap: wrap;
-    gap: 12px;
-
-    margin-bottom: 23px;
-
-    font-size: 11px;
-}
-
-.remember-option {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    color: #927587;
-    cursor: pointer;
-}
-
-.remember-option input {
-    accent-color: var(--pink-dark);
-
-    width: 15px;
-    height: 15px;
-
-    cursor: pointer;
-}
-
-.form-options a {
-    text-decoration: none;
-
-    color: var(--primary);
-    font-weight: 600;
-}
-
-.form-options a:hover {
-    text-decoration: underline;
-}
-
-
-/* =========================================
-   8. BOTÓN DE INICIO DE SESIÓN
-========================================= */
-
-.login-button {
-    width: 100%;
-    height: 52px;
-
-    border: none;
-    border-radius: 12px;
-
-    background: linear-gradient(
-        135deg,
-        #B65F85,
-        #D783A8
-    );
-
-    color: white;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-
-    transition: all 0.3s ease;
-}
-
-.login-button:hover {
-    background: linear-gradient(
-        135deg,
-        #A94F78,
-        #C76E97
-    );
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 9px 22px rgba(183, 91, 134, 0.25);
-}
-
-.login-button:active {
-    transform: translateY(0);
-}
-
-.login-button:focus-visible,
-.toggle-password:focus-visible,
-a:focus-visible {
-    outline: 3px solid var(--pink);
-    outline-offset: 3px;
-}
-
-.button-arrow {
-    font-size: 20px;
-    transition: transform 0.3s ease;
-}
-
-.login-button:hover .button-arrow {
-    transform: translateX(5px);
-}
-
-
-/* =========================================
-   9. MENSAJES GENERALES
-========================================= */
-
-.form-message {
-    display: none;
-
-    padding: 12px;
-    border-radius: 9px;
-
-    font-size: 12px;
-    line-height: 1.5;
-
-    margin-bottom: 15px;
-}
-
-.form-message.success {
-    display: block;
-
-    background: #EDF8F1;
-    color: #39896B;
-
-    border: 1px solid #C3E6CF;
-}
-
-.form-message.error {
-    display: block;
-
-    background: #FFF0F2;
-    color: #C44965;
-
-    border: 1px solid #F1C5D0;
-}
-
-
-/* =========================================
-   10. INFORMACIÓN DE DEMOSTRACIÓN
-========================================= */
-
-.demo-info {
-    margin-top: 30px;
-
-    text-align: center;
-
-    border-top: 1px solid #F2E2EA;
-
-    padding-top: 22px;
-}
-
-.demo-info p {
-    color: var(--primary);
-
-    font-weight: 600;
-    font-size: 12px;
-
-    margin-bottom: 7px;
-}
-
-.demo-info span {
-    color: var(--gray);
-
-    font-size: 11px;
-    line-height: 1.5;
-}
-
-
-/* =========================================
-   11. RESPONSIVIDAD
-========================================= */
-
-/* Tabletas */
-
-@media (max-width: 900px) {
-
-    body {
-        padding: 20px;
-    }
-
-    .login-container {
-        max-width: 750px;
-    }
-
-    .welcome-section {
-        padding: 30px;
-    }
-
-    .form-section {
-        padding: 45px 30px;
-    }
-
-    .welcome-content h1 {
-        font-size: 27px;
-    }
-}
-
-
-/* Celulares */
-
-@media (max-width: 650px) {
-
+@media (max-width: 480px) {
     body {
         padding: 15px;
-        align-items: flex-start;
     }
 
     .login-container {
-        grid-template-columns: 1fr;
-        max-width: 430px;
-        min-height: auto;
-        margin: auto;
-    }
-
-    .welcome-section {
-        padding: 28px;
-        min-height: 270px;
-    }
-
-    .welcome-content {
-        margin-top: 30px;
-    }
-
-    .security-icon {
-        width: 55px;
-        height: 55px;
-        margin-bottom: 17px;
-    }
-
-    .security-icon svg {
-        width: 32px;
-        height: 32px;
-    }
-
-    .welcome-content h1 {
-        font-size: 24px;
-    }
-
-    .welcome-content > p {
-        font-size: 13px;
-    }
-
-    .features {
-        display: none;
-    }
-
-    .footer-text {
-        margin-top: 30px;
-    }
-
-    .form-section {
-        padding: 35px 25px;
-    }
-
-    .form-header h2 {
-        font-size: 27px;
-    }
-}
-
-
-/* Celulares pequeños */
-
-@media (max-width: 360px) {
-
-    body {
-        padding: 8px;
-    }
-
-    .welcome-section,
-    .form-section {
-        padding: 23px 18px;
-    }
-
-    .form-options {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
-
-/* ==========================================
-   🎀 DECORACIÓN EXTRA - ESTILO COQUETTE
-========================================== */
-
-
-/* 1. FONDO CON DETALLES DECORATIVOS */
-
-body {
-    background:
-        radial-gradient(circle at 10% 15%,
-            #F8D9E7 0%, transparent 25%),
-        radial-gradient(circle at 90% 85%,
-            #EBDDF8 0%, transparent 25%),
-        linear-gradient(135deg,
-            #FFF0F6,
-            #FFF8FC,
-            #F8F0FF);
-
-    position: relative;
-    overflow-x: hidden;
-}
-
-
-/* Corazoncitos decorativos */
-
-body::before {
-    content: "♡";
-    position: fixed;
-    top: 8%;
-    left: 5%;
-
-    font-size: 65px;
-    color: rgba(215, 131, 168, 0.25);
-
-    transform: rotate(-15deg);
-
-    pointer-events: none;
-    animation: floatHeart 4s ease-in-out infinite;
-}
-
-body::after {
-    content: "♡";
-    position: fixed;
-    bottom: 8%;
-    right: 5%;
-
-    font-size: 85px;
-    color: rgba(196, 164, 225, 0.3);
-
-    transform: rotate(15deg);
-
-    pointer-events: none;
-    animation: floatHeart 5s ease-in-out infinite;
-}
-
-
-/* Animación de corazones */
-
-@keyframes floatHeart {
-    0%, 100% {
-        transform: translateY(0) rotate(-10deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(10deg);
-    }
-}
-
-
-/* 2. TARJETA PRINCIPAL */
-
-.login-container {
-    border: 2px solid rgba(255, 220, 235, 0.9);
-
-    border-radius: 30px;
-
-    box-shadow:
-        0 15px 40px rgba(198, 116, 153, 0.12),
-        0 5px 15px rgba(198, 116, 153, 0.08);
-
-    position: relative;
-    z-index: 1;
-}
-
-
-/* 3. PANEL ROSA DE BIENVENIDA */
-
-.welcome-section {
-    background: linear-gradient(
-        145deg,
-        #B95F88,
-        #D889AA,
-        #EAB5CC
-    );
-}
-
-
-/* Marca decorada */
-
-.brand-icon {
-    background: #FFE6F0;
-
-    color: #C56F96;
-
-    border: 2px solid rgba(255, 255, 255, 0.6);
-
-    box-shadow: 0 4px 12px rgba(120, 50, 80, 0.12);
-
-    border-radius: 15px;
-}
-
-
-/* Título de bienvenida */
-
-.welcome-content h1 {
-    text-shadow: 0 3px 10px rgba(100, 40, 65, 0.12);
-}
-
-
-/* Icono de seguridad */
-
-.security-icon {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    box-shadow:
-        0 8px 20px rgba(120, 50, 80, 0.12);
-
-    animation: softBounce 3s ease-in-out infinite;
-}
-
-@keyframes softBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
-}
-
-
-/* 4. PEQUEÑOS DETALLES EN EL FORMULARIO */
-
-.form-header {
-    position: relative;
-}
-
-/* Decoración debajo del título */
-
-.form-header h2::after {
-    content: " ♡";
-
-    color: #E9A9C4;
-
-    font-size: 25px;
-}
-
-
-/* Subtítulo decorativo */
-
-.subtitle {
-    background: #FFF0F6;
-
-    padding: 7px 13px;
-
-    border-radius: 20px;
-
-    display: inline-block;
-
-    color: #BD668D;
-}
-
-
-/* 5. CAMPOS MÁS DELICADOS */
-
-.input-wrapper {
-    border-radius: 15px;
-
-    background: #FFFAFC;
-
-    border: 1.5px solid #F0D8E4;
-
-    transition: all 0.3s ease;
-}
-
-.input-wrapper:focus-within {
-    border-color: #D889AA;
-
-    box-shadow:
-        0 0 0 4px rgba(232, 169, 196, 0.18),
-        0 4px 12px rgba(198, 116, 153, 0.08);
-
-    transform: translateY(-1px);
-}
-
-.input-icon {
-    color: #D18BA9;
-}
-
-
-/* 6. BOTÓN PRINCIPAL */
-
-.login-button {
-    background: linear-gradient(
-        135deg,
-        #D889AA,
-        #BD668D,
-        #D889AA
-    );
-
-    background-size: 200% 200%;
-
-    border-radius: 15px;
-
-    box-shadow:
-        0 6px 15px rgba(190, 102, 141, 0.2);
-
-    letter-spacing: 0.3px;
-}
-
-.login-button:hover {
-    background-position: right center;
-
-    box-shadow:
-        0 10px 22px rgba(190, 102, 141, 0.3);
-}
-
-
-/* 7. CHECKBOX ROSADO */
-
-.remember-option input {
-    accent-color: #D889AA;
-}
-
-
-/* 8. ENLACE DE RECUPERACIÓN */
-
-.form-options a {
-    color: #BD668D;
-
-    transition: color 0.3s ease;
-}
-
-.form-options a:hover {
-    color: #914563;
-}
-
-
-/* 9. INFORMACIÓN INFERIOR */
-
-.demo-info {
-    border-top: 1px dashed #EACDDB;
-}
-
-.demo-info p::before {
-    content: "♡ ";
-    color: #D889AA;
-}
-
-.demo-info p::after {
-    content: " ♡";
-    color: #D889AA;
-}
-
-
-/* 10. MENSAJES DE ÉXITO Y ERROR */
-
-.form-message {
-    border-radius: 13px;
-
-    animation: messageAppear 0.3s ease;
-}
-
-@keyframes messageAppear {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* 11. PIE DE PÁGINA */
-
-.footer-text {
-    letter-spacing: 0.3px;
-}
-
-
-/* 12. ANIMACIÓN SUAVE AL CARGAR */
-
-.login-container {
-    animation: cuteEntrance 0.8s ease;
-}
-
-@keyframes cuteEntrance {
-    from {
-        opacity: 0;
-        transform: translateY(25px) scale(0.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-
-/* 13. ADAPTACIÓN PARA CELULARES */
-
-@media (max-width: 650px) {
-
-    body::before {
-        font-size: 40px;
-        top: 3%;
-        left: 2%;
-    }
-
-    body::after {
-        font-size: 50px;
-        bottom: 3%;
-        right: 2%;
-    }
-
-    .login-container {
+        padding: 32px 23px;
         border-radius: 24px;
     }
 
-}
-
-
-/* 14. ACCESIBILIDAD: REDUCIR ANIMACIONES */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    h1 {
+        font-size: 25px;
     }
 
+    input {
+        font-size: 14px;
+    }
+}
+
+/* Accesibilidad: navegación con teclado */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #c78ac0;
+    outline-offset: 3px;
 }
